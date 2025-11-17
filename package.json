@@ -1,0 +1,75 @@
+{
+  "name": "@julienbenac/vine-plugin-phone",
+  "description": "VineJS plugin for validating international phone numbers",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=20.17.0"
+  },
+  "type": "module",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky",
+    "prebuild": "npm run format && npm run lint:fix",
+    "build": "tsup",
+    "postbuild": "del-cli build/**/*.d.cts",
+    "prepublishOnly": "npm run build",
+    "release": "release-it",
+    "taze": "taze"
+  },
+  "homepage": "https://github.com/julienbenac/vine-plugin-phone#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienbenac/vine-plugin-phone.git"
+  },
+  "devDependencies": {
+    "@adonisjs/eslint-config": "^2.1.2",
+    "@adonisjs/prettier-config": "^1.4.5",
+    "@adonisjs/tsconfig": "^1.4.1",
+    "@swc/core": "^1.15.2",
+    "@types/node": "^24.10.1",
+    "del-cli": "^7.0.0",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "release-it": "^19.0.6",
+    "taze": "^19.9.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "libphonenumber-js": "^1.12.26"
+  },
+  "peerDependencies": {
+    "@vinejs/vine": "^4.1.0"
+  },
+  "author": "Julien Benac <contact@julienbenac.fr>",
+  "license": "MIT",
+  "keywords": [
+    "vinejs",
+    "plugin",
+    "phone"
+  ],
+  "prettier": "@adonisjs/prettier-config",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): ${version}",
+      "tagAnnotation": "v${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}",
+      "web": true
+    }
+  }
+}

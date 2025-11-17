@@ -1,0 +1,9 @@
+name: checks
+on:
+  - push
+  - pull_request
+jobs:
+  lint:
+    uses: julienbenac/.github/.github/workflows/lint.yml@master
+  typecheck:
+    uses: julienbenac/.github/.github/workflows/typecheck.yml@master
