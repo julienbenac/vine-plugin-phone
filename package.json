@@ -1,7 +1,7 @@
 {
   "name": "@julienbenac/vine-plugin-phone",
   "description": "VineJS plugin for validating international phone numbers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">=20.17.0"
   },
