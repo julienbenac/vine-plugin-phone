@@ -74,6 +74,23 @@ const schema = vine.object({
 })
 ```
 
+You may define a callback function to compute the options at runtime.
+
+```ts
+// validator.ts
+
+import { phoneRule } from '@julienbenac/vine-plugin-phone'
+import vine from '@vinejs/vine'
+
+const schema = vine.object({
+  phone: vine.string().use(
+    phoneRule((field) => ({
+      countryCode: 'FR',
+    }))
+  ),
+})
+```
+
 #### Extending schema classes
 
 This approach is more reusable and better integrated into the Vine validation system. By extending the `VineString` class, you create a custom, chainable method that fits naturally into your validation schemas. This makes your codebase cleaner, easier to maintain, and consistent with other built-in validation rules such as email or url.
@@ -105,5 +122,19 @@ import vine from '@vinejs/vine'
 
 const schema = vine.object({
   phone: vine.string().phone({ countryCode: 'FR' }),
+})
+```
+
+You may define a callback function to compute the options at runtime.
+
+```ts
+// validator.ts
+
+import vine from '@vinejs/vine'
+
+const schema = vine.object({
+  phone: vine.string().phone((field) => ({
+    countryCode: 'FR',
+  })),
 })
 ```
