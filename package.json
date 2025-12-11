@@ -38,18 +38,18 @@
     "@adonisjs/prettier-config": "^1.4.5",
     "@adonisjs/tsconfig": "^1.4.1",
     "@swc/core": "^1.15.3",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.3",
     "del-cli": "^7.0.0",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
-    "prettier": "^3.6.2",
-    "release-it": "^19.0.6",
-    "taze": "^19.9.0",
+    "prettier": "^3.7.4",
+    "release-it": "^19.1.0",
+    "taze": "^19.9.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "libphonenumber-js": "^1.12.28"
+    "libphonenumber-js": "^1.12.31"
   },
   "peerDependencies": {
     "@vinejs/vine": "^4.1.0"
