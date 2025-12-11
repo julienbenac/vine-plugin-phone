@@ -138,3 +138,25 @@ const schema = vine.object({
   })),
 })
 ```
+
+#### Custom error messages
+
+The [`libphonenumber-js`](https://www.npmjs.com/package/libphonenumber-js) module handles international formats very well. To provide a better UX, you can customize and translate error messages according to the user's language (via an i18n module or a static dictionary). You can also provide readable field names so messages feel more natural to end users.
+
+```ts
+// vine.ts
+
+import vine, { SimpleMessagesProvider } from '@vinejs/vine'
+
+const messages = {
+  phone: 'Le champ {{ field }} doit être un numéro de téléphone valide',
+}
+
+const fields = {
+  phone: 'téléphone',
+}
+
+vine.messagesProvider = new SimpleMessagesProvider(messages, fields)
+```
+
+Now, when using the `phone` rule, error messages are automatically customized and translated according to the provided custom messages and fields.
